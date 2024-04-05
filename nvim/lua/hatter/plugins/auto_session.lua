@@ -9,7 +9,7 @@ return {
     end
 
     auto_session.setup({
-      auto_restore_enabled = true,
+      auto_restore_enabled = false,
       auto_session_suppress_dirs = { "~/", "~/Dev/", "~/Downloads", "~/Documents", "~/Desktop/" },
 
       -- ⚠️  This will only work if Telescope.nvim is installed
