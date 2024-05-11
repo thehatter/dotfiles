@@ -40,6 +40,9 @@ return {
       require("everforest").setup({
         -- Your config here
         background = "hard",
+        colours_override = function (palette)
+          palette.bg0 = "#23272A"
+        end
       })
       vim.cmd([[colorscheme everforest]])
     end,
