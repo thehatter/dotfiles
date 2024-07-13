@@ -86,6 +86,8 @@ return {
 
     telescope.load_extension("fzf")
     telescope.load_extension("egrepify")
+    telescope.load_extension("undo")
+
 
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
@@ -105,5 +107,6 @@ return {
     --   delete action <C-d>
     --   and merge action <C-y>
     keymap.set("n", "<leader>fb", "<cmd>Telescope git_branches<cr>", { desc = "Lists git branches" })
+    keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>", { desc = "Telescope undo" })
   end,
 }
