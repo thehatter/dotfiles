@@ -27,6 +27,8 @@ return {
 
       opts.desc = "Show LSP definitions"
       keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
+      -- CTRL-O and CTRL-I in normal mode should work to go back and forward in the jump list.
+      -- (see :h CTRL-O and :h CTRL-I)
 
       opts.desc = "Show LSP implementations"
       keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
