@@ -87,6 +87,7 @@ return {
     telescope.load_extension("fzf")
     telescope.load_extension("egrepify")
     telescope.load_extension("undo")
+    telescope.load_extension("noice")
 
 
     -- set keymaps
@@ -108,5 +109,6 @@ return {
     --   and merge action <C-y>
     keymap.set("n", "<leader>fb", "<cmd>Telescope git_branches<cr>", { desc = "Lists git branches" })
     keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>", { desc = "Telescope undo" })
+    keymap.set("n", "<leader>fn", "<cmd>Telescope noice<cr>", { desc = "Telescope noice" })
   end,
 }

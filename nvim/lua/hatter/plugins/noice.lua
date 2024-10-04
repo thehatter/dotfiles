@@ -12,6 +12,16 @@ return {
     --   If not available, we use `mini` as the fallback
     "rcarriga/nvim-notify",
   },
+  config = function()
+    local noice = require("noice")
+    noice.setup({
+      -- add any setup options here
+    })
+    local keymap = vim.keymap
+    keymap.set("n", "<leader>nm", "<cmd>messages<CR>", { desc = "Show messages" })
+    keymap.set("n", "<leader>na", "<cmd>NoiceAll<CR>", { desc = "Show All Noice messages" })
+    keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice message" })
+  end,
 
   -- config = function ()
   --   noice = require("noice")

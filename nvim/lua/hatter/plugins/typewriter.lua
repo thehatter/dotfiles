@@ -8,7 +8,7 @@ return {
       enable_horizontal_scroll = false
     })
 
-    vim.cmd('TWEnable')
+    -- vim.cmd('TWEnable')
   end,
   opts = {},
 }

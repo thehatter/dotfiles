@@ -23,5 +23,10 @@ return {
         path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/andrei_main_obsidian_vault",
       },
     },
+    templates = {
+      folder = "Templates",
+      -- date_format = "%Y-%m-%d-%a",
+      -- time_format = "%H:%M",
+    },
   },
 }

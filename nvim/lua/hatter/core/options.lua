@@ -1,6 +1,5 @@
 local opt = vim.opt -- for conciseness
 
-
 -- line numbers
 opt.relativenumber = false -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
@@ -45,3 +44,20 @@ opt.swapfile = false
 -- spell check
 opt.spelllang = 'en_us'
 opt.spell = true
+
+-- newline
+opt.eol = true
+
+-- list chars
+opt.listchars = {
+  tab = '▸ ',
+  trail = '·',
+  extends = '❯',
+  precedes = '❮',
+  nbsp = '␣',
+  eol = '↵',
+  space = '·',
+}
+-- opt.list = true
+
+
