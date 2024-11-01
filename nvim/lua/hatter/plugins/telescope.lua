@@ -10,6 +10,15 @@ return {
     local telescope = require("telescope")
     local actions = require("telescope.actions")
 
+    -- from https://github.com/ThePrimeagen/harpoon/discussions/592
+    local harpoon_add_mark = function(prompt_bufnr)
+      local entry = require("telescope.actions.state").get_selected_entry()
+      local list = require("harpoon"):list()
+      local harpoon_config = list.config
+      local item = harpoon_config.create_list_item(harpoon_config, entry[1])
+      list:add(item)
+    end
+
     telescope.setup({
       defaults = {
         mappings = {
@@ -17,6 +26,10 @@ return {
             ["<C-k>"] = actions.move_selection_previous, -- move to prev result
             ["<C-j>"] = actions.move_selection_next, -- move to next result
             ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+            ["<C-r>"] = harpoon_add_mark,
+          },
+          n = {
+            ["<C-r>"] = harpoon_add_mark,
           },
         },
 

@@ -15,7 +15,8 @@ return {
           prev = "<M-[>",
           dismiss = "<C-]>",
         },
-      }
+      },
+      copilot_node_command = '/Users/hatter/.nvm/versions/node/v22.9.0/bin/node',
     })
   end,
 }

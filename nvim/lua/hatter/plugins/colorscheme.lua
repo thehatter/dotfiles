@@ -41,7 +41,9 @@ return {
         -- Your config here
         background = "hard",
         colours_override = function (palette)
-          palette.bg0 = "#23272A"
+          palette.bg0 = "#1c2021"
+          palette.bg_dim = "#181b1c"
+          -- palette.bg0 = "#23272A"
         end
       })
       vim.cmd([[colorscheme everforest]])
