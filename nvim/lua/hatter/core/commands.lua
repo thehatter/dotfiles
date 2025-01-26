@@ -8,3 +8,11 @@ create_cmd("ToggleBackground", function ()
         vim.cmd'set bg=dark'
     end
 end, {})
+
+vim.api.nvim_create_user_command('Rfinder',
+    function()
+        local path = vim.api.nvim_buf_get_name(0)
+        os.execute('open -R ' .. path)
+    end,
+    {}
+)
