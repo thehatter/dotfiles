@@ -1,7 +1,5 @@
-theme = Everforest Dark - Hard
+theme = dark:Everforest Dark - Hard, light:AtomOneLight
 
 font-family = Hack Nerd Font Mono
 font-size = 16
 adjust-cell-height = 20%
-
-
