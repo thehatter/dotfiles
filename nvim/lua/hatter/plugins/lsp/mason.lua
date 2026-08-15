@@ -34,7 +34,7 @@ return {
         "graphql",
         "emmet_ls",
         "pyright",
-        "solargraph",
+        "ruby_lsp",
         "gopls"
       },
       -- auto-install configured servers (with lspconfig)

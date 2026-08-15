@@ -18,6 +18,9 @@ return {
     -- scroll = { enabled = true },
     -- statuscolumn = { enabled = true },
     -- words = { enabled = true },
+    image = {
+
+    },
     zen = {
       -- your zen configuration comes here
       -- or leave it empty to use the default settings

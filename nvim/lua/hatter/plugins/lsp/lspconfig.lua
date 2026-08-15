@@ -132,12 +132,23 @@ return {
     })
 
     -- configure ruby server
-    lspconfig["solargraph"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      filetypes = { "ruby" },
-      cmd = { os.getenv( "HOME" ) .. "/.rbenv/shims/solargraph", 'stdio' },
-      root_dir = lspconfig.util.root_pattern("Gemfile", ".git", "."),
+    -- lspconfig["ruby-lsp"].setup({
+    --   capabilities = capabilities,
+    --   on_attach = on_attach,
+    --   filetypes = { "ruby" },
+    --   cmd = { os.getenv( "HOME" ) .. "/.rbenv/shims/solargraph", 'stdio' },
+    --   root_dir = lspconfig.util.root_pattern("Gemfile", ".git", "."),
+    -- })
+
+    -- lspconfig["lua_ls"].setup({
+    --   capabilities = capabilities,
+    --   on_attach = on_attach,
+    --   filetypes = { "ruby" },
+    --   formatter = "rubocop",
+    --   root_dir = lspconfig.util.root_pattern("Gemfile", ".git", "."),
+    -- })
+    lspconfig.ruby_lsp.setup({
+      capabilities = capabilities
     })
   end,
 }

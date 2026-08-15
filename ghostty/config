@@ -1,5 +1,7 @@
-theme = dark:Everforest Dark - Hard, light:AtomOneLight
+theme = dark:Everforest Dark Hard, light:AtomOneLight
 
 font-family = Hack Nerd Font Mono
 font-size = 16
 adjust-cell-height = 20%
+
+custom-shader = shaders/cursor_blaze.glsl
