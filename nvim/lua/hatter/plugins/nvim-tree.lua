@@ -11,7 +11,7 @@ return {
     -- change color for arrows in tree to light blue
     vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
     -- vim.cmd([[ highlight NvimTreeCursorLine guibg=#293034  ]])
-    vim.cmd([[ highlight NvimTreeCursorLine guibg=#3b5c3a ]])
+    -- vim.cmd([[ highlight NvimTreeCursorLine guibg=#3b5c3a ]])
 
     -- configure nvim-tree
     nvimtree.setup({

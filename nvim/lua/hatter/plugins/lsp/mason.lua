@@ -1,55 +1,59 @@
 return {
-  "williamboman/mason.nvim",
-  dependencies = {
-    "williamboman/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-  },
-  config = function()
-    -- import mason
-    local mason = require("mason")
-
-    -- import mason-lspconfig
-    local mason_lspconfig = require("mason-lspconfig")
-
-    local mason_tool_installer = require("mason-tool-installer")
-
-    -- enable mason and configure icons
-    mason.setup({
-      ui = {
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
-        },
+  {
+    "mason-org/mason-lspconfig.nvim",
+    opts = {
+      -- mason-lspconfig v2 auto-enables every installed mason package that maps to
+      -- an lspconfig server. stylua maps to one (StyLua has an --lsp mode), but the
+      -- version mason-tool-installer pins predates that flag, so it crashes on start.
+      -- It's only here as a formatter, so keep it out of the LSP set.
+      automatic_enable = {
+        exclude = { "stylua" },
       },
-    })
-
-    mason_lspconfig.setup({
       -- list of servers for mason to install
       ensure_installed = {
         "ts_ls",
         "html",
         "cssls",
+        "tailwindcss",
+        "svelte",
         "lua_ls",
         "graphql",
         "emmet_ls",
+        "prismals",
         "pyright",
-        "ruby_lsp",
-        "gopls"
+        -- "eslint",
       },
-      -- auto-install configured servers (with lspconfig)
-      automatic_installation = true, -- not the same as ensure_installed
-    })
-
-    mason_tool_installer.setup({
+    },
+    dependencies = {
+      {
+        "mason-org/mason.nvim",
+        opts = {
+          ui = {
+            icons = {
+              package_installed = "✓",
+              package_pending = "➜",
+              package_uninstalled = "✗",
+            },
+          },
+        },
+      },
+      "neovim/nvim-lspconfig",
+    },
+  },
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    opts = {
       ensure_installed = {
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
         "isort", -- python formatter
         "black", -- python formatter
-        "pylint", -- python linter
-        "eslint_d", -- js linter
+        "pylint",
+        "eslint_d",
       },
-    })
-  end,
+    },
+    dependencies = {
+      "mason-org/mason.nvim",
+    },
+  },
 }
